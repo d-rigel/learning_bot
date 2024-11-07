@@ -1,0 +1,17 @@
+{
+    "name": "Python",
+    "sessions": [
+      {
+        "name": "Intro to Variables",
+        "content": "In Python, variables are used to store data values...",
+        "examples": ["x = 5", "y = 'hello'"],
+        "tasks": ["Define a variable x with the value 10.", "Create a variable y with the value 'world'."]
+      },
+      {
+        "name": "Basic Functions",
+        "content": "Functions in Python allow you to encapsulate code and reuse it...",
+        "examples": ["def greet(): return 'Hello'"],
+        "tasks": ["Create a function named 'greet' that returns 'Hello'.", "Define a function that adds two numbers."]
+      }
+    ]
+  }

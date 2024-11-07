@@ -1,0 +1,17 @@
+{
+    "name": "JavaScript",
+    "sessions": [
+      {
+        "name": "Intro to Variables",
+        "content": "In JavaScript, variables are containers for storing data values...",
+        "examples": ["let x = 5;", "const y = 'hello';"],
+        "tasks": ["Define a variable x with the value 10.", "Create a constant variable y with the value 'world'."]
+      },
+      {
+        "name": "Basic Functions",
+        "content": "Functions allow you to encapsulate code and reuse it...",
+        "examples": ["function greet() { return 'Hello'; }"],
+        "tasks": ["Create a function named 'greet' that returns 'Hello'.", "Define a function that adds two numbers."]
+      }
+    ]
+  }
