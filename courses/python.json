@@ -1,17 +1,311 @@
 {
-    "name": "Python",
-    "sessions": [
-      {
-        "name": "Intro to Variables",
-        "content": "In Python, variables are used to store data values...",
-        "examples": ["x = 5", "y = 'hello'"],
-        "tasks": ["Define a variable x with the value 10.", "Create a variable y with the value 'world'."]
-      },
-      {
-        "name": "Basic Functions",
-        "content": "Functions in Python allow you to encapsulate code and reuse it...",
-        "examples": ["def greet(): return 'Hello'"],
-        "tasks": ["Create a function named 'greet' that returns 'Hello'.", "Define a function that adds two numbers."]
-      }
-    ]
-  }
+  "name": "Python",
+  "sessions": [
+    {
+      "id": 1,
+      "name": "Intro to Variables",
+      "content": "In Python, variables are used to store data values...",
+      "examples": [
+        "x = 5",
+        "y = 'hello'",
+        "z = True",
+        "a = 10",
+        "b = 'world'",
+        "c = False",
+        "d = 20",
+        "e = 'universe'",
+        "f = None",
+        "g = 30"
+      ],
+      "tasks": [
+        "Define a variable x with the value 10.",
+        "Create a variable y with the value 'world'.",
+        "Declare a variable z and assign it the value True.",
+        "Define a variable a with the value 20.",
+        "Create a variable b with the value 'hello'.",
+        "Declare a variable c and assign it the value False.",
+        "Define a variable d with the value 30.",
+        "Create a variable e with the value 'goodbye'.",
+        "Declare a variable f and assign it the value None.",
+        "Define a variable g with the value 40."
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Basic Functions",
+      "content": "Functions in Python allow you to encapsulate code and reuse it...",
+      "examples": [
+        "def greet(): return 'Hello'",
+        "def add(a, b): return a + b",
+        "def multiply(a, b): return a * b",
+        "def subtract(a, b): return a - b",
+        "def divide(a, b): return a / b",
+        "def is_even(num): return num % 2 == 0",
+        "def is_odd(num): return num % 2 != 0",
+        "def square(num): return num * num",
+        "def cube(num): return num * num * num",
+        "def power(base, exponent): return base ** exponent"
+      ],
+      "tasks": [
+        "Create a function named 'greet' that returns 'Hello'.",
+        "Define a function that adds two numbers.",
+        "Create a function that multiplies two numbers.",
+        "Define a function that subtracts two numbers.",
+        "Create a function that divides two numbers.",
+        "Define a function that checks if a number is even.",
+        "Create a function that checks if a number is odd.",
+        "Define a function that returns the square of a number.",
+        "Create a function that returns the cube of a number.",
+        "Define a function that calculates the power of a number."
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Control Flow",
+      "content": "Control flow statements like if, else, and elif help you control the execution path of your code...",
+      "examples": [
+        "if x > 10: print('x is greater than 10')",
+        "if x < 10: print('x is less than 10')",
+        "elif x == 10: print('x is 10')",
+        "else: print('x is greater than 10')",
+        "if x == 10: print('x is exactly 10')",
+        "if x != 10: print('x is not 10')",
+        "if x >= 10: print('x is 10 or greater')",
+        "if x <= 10: print('x is 10 or less')",
+        "if x > 10 and x < 20: print('x is between 10 and 20')",
+        "if x < 10 or x > 20: print('x is less than 10 or greater than 20')"
+      ],
+      "tasks": [
+        "Write an if statement to check if a variable x is greater than 10.",
+        "Create an if-else statement to check if a variable x is less than 10.",
+        "Write an elif statement to check if a variable x is exactly 10.",
+        "Create an if-elif-else statement to check if a variable x is greater than 10.",
+        "Write an if statement to check if a variable x is exactly 10.",
+        "Create an if statement to check if a variable x is not 10.",
+        "Write an if statement to check if a variable x is 10 or greater.",
+        "Create an if statement to check if a variable x is 10 or less.",
+        "Write an if statement to check if a variable x is between 10 and 20.",
+        "Create an if statement to check if a variable x is less than 10 or greater than 20."
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Loops",
+      "content": "Loops allow you to repeat a block of code multiple times...",
+      "examples": [
+        "for i in range(5): print(i)",
+        "for i in range(5, 0, -1): print(i)",
+        "i = 0; while i < 5: print(i); i += 1",
+        "i = 5; while i > 0: print(i); i -= 1",
+        "for i in range(0, 10, 2): print(i)",
+        "i = 0; while i < 5: print(i); i += 1",
+        "for i in range(1, 11): print(i)",
+        "i = 10; while i > 0: print(i); i -= 1",
+        "for i in range(10): if i == 5: continue; print(i)",
+        "i = 0; while i < 10: if i == 5: break; print(i); i += 1"
+      ],
+      "tasks": [
+        "Write a for loop to print numbers from 0 to 4.",
+        "Create a for loop to print numbers from 5 to 1.",
+        "Write a while loop to print numbers from 0 to 4.",
+        "Create a while loop to print numbers from 5 to 1.",
+        "Write a for loop to print even numbers from 0 to 8.",
+        "Create a while loop to print numbers from 0 to 4.",
+        "Write a for loop to print numbers from 1 to 10.",
+        "Create a while loop to print numbers from 10 to 1.",
+        "Write a for loop to print numbers from 0 to 9, skipping 5.",
+        "Create a while loop to print numbers from 0 to 9, stopping at 5."
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Lists",
+      "content": "Lists are used to store multiple items in a single variable...",
+      "examples": [
+        "lst = [1, 2, 3]",
+        "lst = ['a', 'b', 'c']",
+        "lst = [True, False, True]",
+        "lst = [1, 'a', True]",
+        "lst = [1, 2, 3, 4, 5]",
+        "lst = ['apple', 'banana', 'cherry']",
+        "lst = [10, 20, 30, 40, 50]",
+        "lst = ['hello', 'world', 'universe']",
+        "lst = [1, 3, 5, 7, 9]",
+        "lst = ['a', 'b', 'c', 'd', 'e']"
+      ],
+      "tasks": [
+        "Create a list with the values 1, 2, and 3.",
+        "Create a list with the values 'a', 'b', and 'c'.",
+        "Create a list with the values True, False, and True.",
+        "Create a list with the values 1, 'a', and True.",
+        "Create a list with the values 1, 2, 3, 4, and 5.",
+        "Create a list with the values 'apple', 'banana', and 'cherry'.",
+        "Create a list with the values 10, 20, 30, 40, and 50.",
+        "Create a list with the values 'hello', 'world', and 'universe'.",
+        "Create a list with the values 1, 3, 5, 7, and 9.",
+        "Create a list with the values 'a', 'b', 'c', 'd', and 'e'."
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Dictionaries",
+      "content": "Dictionaries are used to store key-value pairs in Python...",
+      "examples": [
+        "dct = { 'name': 'John', 'age': 30 }",
+        "dct = { 'x': 10, 'y': 20 }",
+        "dct = { 'is_student': True, 'is_employee': False }",
+        "dct = { 'fruit': 'apple', 'color': 'red' }",
+        "dct = { 'a': 1, 'b': 2, 'c': 3 }",
+        "dct = { 'first_name': 'Jane', 'last_name': 'Doe' }",
+        "dct = { 'width': 100, 'height': 200 }",
+        "dct = { 'is_active': True, 'is_admin': False }",
+        "dct = { 'day': 'Monday', 'month': 'January' }",
+        "dct = { 'x': 5, 'y': 10, 'z': 15 }"
+      ],
+      "tasks": [
+        "Create a dictionary with the keys 'name' and 'age'.",
+        "Create a dictionary with the keys 'x' and 'y'.",
+        "Create a dictionary with the keys 'is_student' and 'is_employee'.",
+        "Create a dictionary with the keys 'fruit' and 'color'.",
+        "Create a dictionary with the keys 'a', 'b', and 'c'.",
+        "Create a dictionary with the keys 'first_name' and 'last_name'.",
+        "Create a dictionary with the keys 'width' and 'height'.",
+        "Create a dictionary with the keys 'is_active' and 'is_admin'.",
+        "Create a dictionary with the keys 'day' and 'month'.",
+        "Create a dictionary with the keys 'x', 'y', and 'z'."
+      ]
+    },
+    {
+      "id": 7,
+      "name": "File Handling",
+      "content": "File handling allows you to read from and write to files in Python...",
+      "examples": [
+        "with open('file.txt', 'r') as file: content = file.read()",
+        "with open('file.txt', 'w') as file: file.write('Hello, World!')",
+        "with open('file.txt', 'a') as file: file.write('Appended text')",
+        "with open('file.txt', 'r') as file: lines = file.readlines()",
+        "with open('file.txt', 'r') as file: for line in file: print(line)",
+        "with open('file.txt', 'w') as file: file.writelines(['Line 1\n', 'Line 2\n'])",
+        "with open('file.txt', 'r') as file: content = file.read(10)",
+        "with open('file.txt', 'w') as file: file.truncate(0)",
+        "with open('file.txt', 'r+') as file: file.write('New content')",
+        "with open('file.txt', 'r') as file: content = file.read().splitlines()"
+      ],
+      "tasks": [
+        "Read the content of a file named 'file.txt'.",
+        "Write 'Hello, World!' to a file named 'file.txt'.",
+        "Append 'Appended text' to a file named 'file.txt'.",
+        "Read all lines from a file named 'file.txt'.",
+        "Print each line from a file named 'file.txt'.",
+        "Write multiple lines to a file named 'file.txt'.",
+        "Read the first 10 characters from a file named 'file.txt'.",
+        "Truncate the content of a file named 'file.txt'.",
+        "Write 'New content' to a file named 'file.txt' in read-write mode.",
+        "Read the content of a file named 'file.txt' and split it into lines."
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Exception Handling",
+      "content": "Exception handling allows you to handle errors gracefully in Python...",
+      "examples": [
+        "try: x = 1 / 0 except ZeroDivisionError: print('Cannot divide by zero')",
+        "try: x = int('a') except ValueError: print('Invalid conversion')",
+        "try: x = [1, 2, 3]; print(x[3]) except IndexError: print('Index out of range')",
+        "try: x = {'a': 1}; print(x['b']) except KeyError: print('Key not found')",
+        "try: x = open('nonexistent.txt') except FileNotFoundError: print('File not found')",
+        "try: x = 1 / 0 except Exception as e: print(f'An error occurred: {e}')",
+        "try: x = 1 / 0 except ZeroDivisionError: print('Cannot divide by zero') finally: print('This will always execute')",
+        "try: x = 1 / 0 except ZeroDivisionError: print('Cannot divide by zero') else: print('No error occurred')",
+        "try: x = int('1') except ValueError: print('Invalid conversion') else: print('Conversion successful')",
+        "try: x = [1, 2, 3]; print(x[2]) except IndexError: print('Index out of range') else: print('Index found')"
+      ],
+      "tasks": [
+        "Handle a ZeroDivisionError when dividing by zero.",
+        "Handle a ValueError when converting a string to an integer.",
+        "Handle an IndexError when accessing an out-of-range index in a list.",
+        "Handle a KeyError when accessing a non-existent key in a dictionary.",
+        "Handle a FileNotFoundError when opening a non-existent file.",
+        "Handle any exception and print the error message.",
+        "Use a finally block to execute code regardless of whether an exception occurred.",
+        "Use an else block to execute code if no exception occurred.",
+        "Handle a ValueError when converting a string to an integer and print a success message if no error occurred.",
+        "Handle an IndexError when accessing an index in a list and print a success message if no error occurred."
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Classes and Objects",
+      "content": "Classes and objects allow you to create custom data types in Python...",
+      "examples": [
+        "class MyClass: def __init__(self, value): self.value = value",
+        "obj = MyClass(10)",
+        "class MyClass: def greet(self): return 'Hello'",
+        "obj = MyClass(); print(obj.greet())",
+        "class MyClass: def __init__(self, name): self.name = name",
+        "obj = MyClass('John')",
+        "class MyClass: def __init__(self, age): self.age = age",
+        "obj = MyClass(30)",
+        "class MyClass: def __init__(self, is_student): self.is_student = is_student",
+        "obj = MyClass(True)",
+        "class MyClass: def __init__(self, is_employee): self.is_employee = is_employee",
+        "obj = MyClass(False)",
+        "class MyClass: def __init__(self, fruit): self.fruit = fruit",
+        "obj = MyClass('apple')",
+        "class MyClass: def __init__(self, color): self.color = color",
+        "obj = MyClass('red')",
+        "class MyClass: def __init__(self, a, b, c): self.a = a; self.b = b; self.c = c",
+        "obj = MyClass(1, 2, 3)"
+      ],
+      "tasks": [
+        "Create a class named 'MyClass' with an __init__ method that takes a 'value' parameter.",
+        "Create an object of the 'MyClass' class with the value 10.",
+        "Create a class named 'MyClass' with a 'greet' method that returns 'Hello'.",
+        "Create an object of the 'MyClass' class and call the 'greet' method.",
+        "Create a class named 'MyClass' with an __init__ method that takes a 'name' parameter.",
+        "Create an object of the 'MyClass' class with the name 'John'.",
+        "Create a class named 'MyClass' with an __init__ method that takes an 'age' parameter.",
+        "Create an object of the 'MyClass' class with the age 30.",
+        "Create a class named 'MyClass' with an __init__ method that takes an 'is_student' parameter.",
+        "Create an object of the 'MyClass' class with the value True.",
+        "Create a class named 'MyClass' with an __init__ method that takes an 'is_employee' parameter.",
+        "Create an object of the 'MyClass' class with the value False.",
+        "Create a class named 'MyClass' with an __init__ method that takes a 'fruit' parameter.",
+        "Create an object of the 'MyClass' class with the fruit 'apple'.",
+        "Create a class named 'MyClass' with an __init__ method that takes a 'color' parameter.",
+        "Create an object of the 'MyClass' class with the color 'red'.",
+        "Create a class named 'MyClass' with an __init__ method that takes three parameters 'a', 'b', and 'c'.",
+        "Create an object of the 'MyClass' class with the values 1, 2, and 3."
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Modules and Packages",
+      "content": "Modules and packages allow you to organize your Python code into separate files...",
+      "examples": [
+        "from mymodule import myfunction",
+        "import mymodule",
+        "from mymodule import myvariable",
+        "import mymodule as mm",
+        "from mymodule import MyClass",
+        "import mypackage.mymodule",
+        "from mypackage import mymodule",
+        "from mypackage.mymodule import myfunction",
+        "import mypackage.mymodule as mm",
+        "from mypackage import mymodule as mm"
+      ],
+      "tasks": [
+        "Import a function named 'myfunction' from a module named 'mymodule'.",
+        "Import a module named 'mymodule'.",
+        "Import a variable named 'myvariable' from a module named 'mymodule'.",
+        "Import a module named 'mymodule' and give it an alias 'mm'.",
+        "Import a class named 'MyClass' from a module named 'mymodule'.",
+        "Import a module named 'mymodule' from a package named 'mypackage'.",
+        "Import a module named 'mymodule' from a package named 'mypackage'.",
+        "Import a function named 'myfunction' from a module named 'mymodule' within a package named 'mypackage'.",
+        "Import a module named 'mymodule' from a package named 'mypackage' and give it an alias 'mm'.",
+        "Import a module named 'mymodule' from a package named 'mypackage' and give it an alias 'mm'."
+      ]
+    }
+  ]
+}

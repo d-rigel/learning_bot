@@ -23,5 +23,8 @@ def next_session(profile):
         json.dump(profile, file)
     return session
 
-
-
+def get_current_session(profile):
+    with open(profile["course_json_file"], "r") as course_file:
+        course_data = json.load(course_file)
+    session = course_data["sessions"][profile["current_session_id"]]
+    return session

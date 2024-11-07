@@ -1,17 +1,295 @@
 {
-    "name": "JavaScript",
-    "sessions": [
-      {
-        "name": "Intro to Variables",
-        "content": "In JavaScript, variables are containers for storing data values...",
-        "examples": ["let x = 5;", "const y = 'hello';"],
-        "tasks": ["Define a variable x with the value 10.", "Create a constant variable y with the value 'world'."]
-      },
-      {
-        "name": "Basic Functions",
-        "content": "Functions allow you to encapsulate code and reuse it...",
-        "examples": ["function greet() { return 'Hello'; }"],
-        "tasks": ["Create a function named 'greet' that returns 'Hello'.", "Define a function that adds two numbers."]
-      }
-    ]
-  }
+  "name": "JavaScript",
+  "sessions": [
+    {
+      "id": 1,
+      "name": "Intro to Variables",
+      "content": "In JavaScript, variables are containers for storing data values...",
+      "examples": [
+        "let x = 5;",
+        "const y = 'hello';",
+        "var z = true;",
+        "let a = 10;",
+        "const b = 'world';",
+        "var c = false;",
+        "let d = 20;",
+        "const e = 'universe';",
+        "var f = null;",
+        "let g = undefined;"
+      ],
+      "tasks": [
+        "Define a variable x with the value 10.",
+        "Create a constant variable y with the value 'world'.",
+        "Declare a variable z and assign it the value true.",
+        "Define a variable a with the value 20.",
+        "Create a constant variable b with the value 'hello'.",
+        "Declare a variable c and assign it the value false.",
+        "Define a variable d with the value 30.",
+        "Create a constant variable e with the value 'goodbye'.",
+        "Declare a variable f and assign it the value null.",
+        "Define a variable g with the value undefined."
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Basic Functions",
+      "content": "Functions allow you to encapsulate code and reuse it...",
+      "examples": [
+        "function greet() { return 'Hello'; }",
+        "function add(a, b) { return a + b; }",
+        "function multiply(a, b) { return a * b; }",
+        "function subtract(a, b) { return a - b; }",
+        "function divide(a, b) { return a / b; }",
+        "function isEven(num) { return num % 2 === 0; }",
+        "function isOdd(num) { return num % 2 !== 0; }",
+        "function square(num) { return num * num; }",
+        "function cube(num) { return num * num * num; }",
+        "function power(base, exponent) { return Math.pow(base, exponent); }"
+      ],
+      "tasks": [
+        "Create a function named 'greet' that returns 'Hello'.",
+        "Define a function that adds two numbers.",
+        "Create a function that multiplies two numbers.",
+        "Define a function that subtracts two numbers.",
+        "Create a function that divides two numbers.",
+        "Define a function that checks if a number is even.",
+        "Create a function that checks if a number is odd.",
+        "Define a function that returns the square of a number.",
+        "Create a function that returns the cube of a number.",
+        "Define a function that calculates the power of a number."
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Control Flow",
+      "content": "Control flow statements like if, else, and switch help you control the execution path of your code...",
+      "examples": [
+        "if (x > 10) { console.log('x is greater than 10'); }",
+        "if (x < 10) { console.log('x is less than 10'); } else { console.log('x is 10 or greater'); }",
+        "switch (x) { case 1: console.log('x is 1'); break; case 2: console.log('x is 2'); break; default: console.log('x is neither 1 nor 2'); }",
+        "if (x === 10) { console.log('x is exactly 10'); }",
+        "if (x !== 10) { console.log('x is not 10'); }",
+        "if (x >= 10) { console.log('x is 10 or greater'); }",
+        "if (x <= 10) { console.log('x is 10 or less'); }",
+        "if (x > 10 && x < 20) { console.log('x is between 10 and 20'); }",
+        "if (x < 10 || x > 20) { console.log('x is less than 10 or greater than 20'); }",
+        "if (x === 10) { console.log('x is 10'); } else if (x === 20) { console.log('x is 20'); } else { console.log('x is neither 10 nor 20'); }"
+      ],
+      "tasks": [
+        "Write an if statement to check if a variable x is greater than 10.",
+        "Create an if-else statement to check if a variable x is less than 10.",
+        "Write a switch statement to handle different cases for a variable y.",
+        "Create an if statement to check if a variable x is exactly 10.",
+        "Write an if statement to check if a variable x is not 10.",
+        "Create an if statement to check if a variable x is 10 or greater.",
+        "Write an if statement to check if a variable x is 10 or less.",
+        "Create an if statement to check if a variable x is between 10 and 20.",
+        "Write an if statement to check if a variable x is less than 10 or greater than 20.",
+        "Create an if-else-if statement to check if a variable x is 10, 20, or neither."
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Loops",
+      "content": "Loops allow you to repeat a block of code multiple times...",
+      "examples": [
+        "for (let i = 0; i < 5; i++) { console.log(i); }",
+        "for (let i = 5; i > 0; i--) { console.log(i); }",
+        "let i = 0; while (i < 5) { console.log(i); i++; }",
+        "let i = 5; while (i > 0) { console.log(i); i--; }",
+        "for (let i = 0; i < 10; i += 2) { console.log(i); }",
+        "let i = 0; do { console.log(i); i++; } while (i < 5);",
+        "for (let i = 1; i <= 10; i++) { console.log(i); }",
+        "let i = 10; while (i > 0) { console.log(i); i--; }",
+        "for (let i = 0; i < 10; i++) { if (i === 5) { continue; } console.log(i); }",
+        "let i = 0; while (i < 10) { if (i === 5) { break; } console.log(i); i++; }"
+      ],
+      "tasks": [
+        "Write a for loop to print numbers from 0 to 4.",
+        "Create a for loop to print numbers from 5 to 1.",
+        "Write a while loop to print numbers from 0 to 4.",
+        "Create a while loop to print numbers from 5 to 1.",
+        "Write a for loop to print even numbers from 0 to 8.",
+        "Create a do-while loop to print numbers from 0 to 4.",
+        "Write a for loop to print numbers from 1 to 10.",
+        "Create a while loop to print numbers from 10 to 1.",
+        "Write a for loop to print numbers from 0 to 9, skipping 5.",
+        "Create a while loop to print numbers from 0 to 9, stopping at 5."
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Arrays",
+      "content": "Arrays are used to store multiple values in a single variable...",
+      "examples": [
+        "let arr = [1, 2, 3];",
+        "let arr = ['a', 'b', 'c'];",
+        "let arr = [true, false, true];",
+        "let arr = [1, 'a', true];",
+        "let arr = [1, 2, 3, 4, 5];",
+        "let arr = ['apple', 'banana', 'cherry'];",
+        "let arr = [10, 20, 30, 40, 50];",
+        "let arr = ['hello', 'world', 'universe'];",
+        "let arr = [1, 3, 5, 7, 9];",
+        "let arr = ['a', 'b', 'c', 'd', 'e'];"
+      ],
+      "tasks": [
+        "Create an array with the values 1, 2, and 3.",
+        "Create an array with the values 'a', 'b', and 'c'.",
+        "Create an array with the values true, false, and true.",
+        "Create an array with the values 1, 'a', and true.",
+        "Create an array with the values 1, 2, 3, 4, and 5.",
+        "Create an array with the values 'apple', 'banana', and 'cherry'.",
+        "Create an array with the values 10, 20, 30, 40, and 50.",
+        "Create an array with the values 'hello', 'world', and 'universe'.",
+        "Create an array with the values 1, 3, 5, 7, and 9.",
+        "Create an array with the values 'a', 'b', 'c', 'd', and 'e'."
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Objects",
+      "content": "Objects are used to store key-value pairs in JavaScript...",
+      "examples": [
+        "let obj = { name: 'John', age: 30 };",
+        "let obj = { x: 10, y: 20 };",
+        "let obj = { isStudent: true, isEmployee: false };",
+        "let obj = { fruit: 'apple', color: 'red' };",
+        "let obj = { a: 1, b: 2, c: 3 };",
+        "let obj = { firstName: 'Jane', lastName: 'Doe' };",
+        "let obj = { width: 100, height: 200 };",
+        "let obj = { isActive: true, isAdmin: false };",
+        "let obj = { day: 'Monday', month: 'January' };",
+        "let obj = { x: 5, y: 10, z: 15 };"
+      ],
+      "tasks": [
+        "Create an object with the properties 'name' and 'age'.",
+        "Create an object with the properties 'x' and 'y'.",
+        "Create an object with the properties 'isStudent' and 'isEmployee'.",
+        "Create an object with the properties 'fruit' and 'color'.",
+        "Create an object with the properties 'a', 'b', and 'c'.",
+        "Create an object with the properties 'firstName' and 'lastName'.",
+        "Create an object with the properties 'width' and 'height'.",
+        "Create an object with the properties 'isActive' and 'isAdmin'.",
+        "Create an object with the properties 'day' and 'month'.",
+        "Create an object with the properties 'x', 'y', and 'z'."
+      ]
+    },
+    {
+      "id": 7,
+      "name": "DOM Manipulation",
+      "content": "DOM manipulation allows you to interact with HTML elements using JavaScript...",
+      "examples": [
+        "document.getElementById('myId').innerHTML = 'Hello';",
+        "document.querySelector('.myClass').style.color = 'red';",
+        "document.createElement('div');",
+        "document.body.appendChild(element);",
+        "document.getElementById('myId').addEventListener('click', function() { console.log('Clicked'); });",
+        "document.getElementById('myId').classList.add('newClass');",
+        "document.getElementById('myId').classList.remove('oldClass');",
+        "document.getElementById('myId').classList.toggle('active');",
+        "document.getElementById('myId').setAttribute('data-id', '123');",
+        "document.getElementById('myId').removeAttribute('data-id');"
+      ],
+      "tasks": [
+        "Change the inner HTML of an element with the ID 'myId' to 'Hello'.",
+        "Change the color of an element with the class 'myClass' to red.",
+        "Create a new div element.",
+        "Append a new element to the body of the document.",
+        "Add a click event listener to an element with the ID 'myId'.",
+        "Add a class 'newClass' to an element with the ID 'myId'.",
+        "Remove a class 'oldClass' from an element with the ID 'myId'.",
+        "Toggle a class 'active' on an element with the ID 'myId'.",
+        "Set a data attribute 'data-id' with the value '123' on an element with the ID 'myId'.",
+        "Remove the data attribute 'data-id' from an element with the ID 'myId'."
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Event Handling",
+      "content": "Event handling allows you to respond to user interactions in JavaScript...",
+      "examples": [
+        "document.getElementById('myId').addEventListener('click', function() { console.log('Clicked'); });",
+        "document.getElementById('myId').addEventListener('mouseover', function() { console.log('Mouse over'); });",
+        "document.getElementById('myId').addEventListener('keydown', function(event) { console.log(event.key); });",
+        "document.getElementById('myId').addEventListener('submit', function(event) { event.preventDefault(); });",
+        "document.getElementById('myId').addEventListener('focus', function() { console.log('Focused'); });",
+        "document.getElementById('myId').addEventListener('blur', function() { console.log('Blurred'); });",
+        "document.getElementById('myId').addEventListener('change', function() { console.log('Changed'); });",
+        "document.getElementById('myId').addEventListener('input', function() { console.log('Input'); });",
+        "document.getElementById('myId').addEventListener('load', function() { console.log('Loaded'); });",
+        "document.getElementById('myId').addEventListener('resize', function() { console.log('Resized'); });"
+      ],
+      "tasks": [
+        "Add a click event listener to an element with the ID 'myId'.",
+        "Add a mouseover event listener to an element with the ID 'myId'.",
+        "Add a keydown event listener to an element with the ID 'myId'.",
+        "Add a submit event listener to a form with the ID 'myId'.",
+        "Add a focus event listener to an input element with the ID 'myId'.",
+        "Add a blur event listener to an input element with the ID 'myId'.",
+        "Add a change event listener to a select element with the ID 'myId'.",
+        "Add an input event listener to an input element with the ID 'myId'.",
+        "Add a load event listener to an image element with the ID 'myId'.",
+        "Add a resize event listener to the window object."
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Promises and Async/Await",
+      "content": "Promises and async/await are used to handle asynchronous operations in JavaScript...",
+      "examples": [
+        "let promise = new Promise((resolve, reject) => { resolve('Success'); });",
+        "promise.then(result => console.log(result));",
+        "async function fetchData() { let response = await fetch('https://api.example.com/data'); let data = await response.json(); return data; }",
+        "async function getData() { try { let data = await fetchData(); console.log(data); } catch (error) { console.error(error); } }",
+        "let promise = new Promise((resolve, reject) => { reject('Error'); });",
+        "promise.catch(error => console.error(error));",
+        "async function fetchData() { let response = await fetch('https://api.example.com/data'); if (!response.ok) { throw new Error('Network response was not ok'); } let data = await response.json(); return data; }",
+        "async function getData() { try { let data = await fetchData(); console.log(data); } catch (error) { console.error(error); } }",
+        "let promise = Promise.all([promise1, promise2]);",
+        "promise.then(results => console.log(results));"
+      ],
+      "tasks": [
+        "Create a new Promise that resolves with the message 'Success'.",
+        "Use the .then() method to handle the resolved value of a Promise.",
+        "Create an async function that fetches data from an API.",
+        "Use try/catch to handle errors in an async function.",
+        "Create a new Promise that rejects with the message 'Error'.",
+        "Use the .catch() method to handle the rejected value of a Promise.",
+        "Create an async function that fetches data from an API and throws an error if the response is not ok.",
+        "Use try/catch to handle errors in an async function.",
+        "Use Promise.all() to wait for multiple Promises to resolve.",
+        "Use the .then() method to handle the resolved values of multiple Promises."
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Modules",
+      "content": "Modules allow you to organize your JavaScript code into separate files...",
+      "examples": [
+        "export const myFunction = () => { console.log('Hello'); };",
+        "import { myFunction } from './myModule.js';",
+        "export default myFunction;",
+        "import myFunction from './myModule.js';",
+        "export const myVariable = 10;",
+        "import { myVariable } from './myModule.js';",
+        "export class MyClass { constructor() { console.log('Class created'); } }",
+        "import { MyClass } from './myModule.js';",
+        "export const myObject = { name: 'John', age: 30 };",
+        "import { myObject } from './myModule.js';"
+      ],
+      "tasks": [
+        "Export a function named 'myFunction' from a module.",
+        "Import the 'myFunction' function from a module.",
+        "Export a default function from a module.",
+        "Import the default function from a module.",
+        "Export a variable named 'myVariable' from a module.",
+        "Import the 'myVariable' variable from a module.",
+        "Export a class named 'MyClass' from a module.",
+        "Import the 'MyClass' class from a module.",
+        "Export an object named 'myObject' from a module.",
+        "Import the 'myObject' object from a module."
+      ]
+    }
+  ]
+}

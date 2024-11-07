@@ -2,8 +2,8 @@ import discord
 from discord.ext import commands
 from dotenv import load_dotenv
 import os
-from utils.course_manager import get_courses, create_profile, next_session
-from utils.profile_manager import get_profile
+from utils.course_manager import get_courses, create_profile, next_session, get_current_session
+from utils.profile_manager import get_profile, save_profile
 from utils.intent_detector import detect_intent
 
 load_dotenv()
@@ -17,44 +17,91 @@ bot = commands.Bot(command_prefix="!", intents=intents)
 async def on_ready():
     print(f'Logged in as {bot.user}')
 
-@bot.command()
-async def list_courses(ctx):
-    courses = get_courses()
-    await ctx.send(f"I offer courses in {', '.join(courses)}. Which one would you like to start with?")
+@bot.event
+async def on_message(message):
+    if message.author == bot.user:
+        return
 
-@bot.command()
-async def enroll(ctx, course):
-    discord_id = ctx.author.id
-    profile = create_profile(discord_id, course)
-    await ctx.send(f"You're enrolled in the {course} course! Let's begin with your first session.")
+    if isinstance(message.channel, discord.DMChannel):
+        await handle_dm(message)
+    else:
+        await bot.process_commands(message)
 
-@bot.command()
-async def start_session(ctx):
-    discord_id = ctx.author.id
+async def handle_dm(message):
+    content = message.content.strip().lower()
+    discord_id = message.author.id
     profile = get_profile(discord_id)
+
+    if content == "menu":
+        await display_menu(message.author)
+    elif content.startswith("a"):
+        courses = get_courses()
+        await message.author.send(f"I offer courses in {', '.join(courses)}. Which one would you like to start with?")
+    elif content.startswith("b"):
+        if len(content.split()) < 2:
+            await message.author.send("Please specify a course to enroll in. For example: 'b JavaScript'")
+        else:
+            course = content.split(" ")[1]
+            profile = create_profile(discord_id, course)
+            await message.author.send(f"You're enrolled in the {course} course! Let's begin with your first session.")
+            await start_next_session(message.author, profile)
+    elif content == "c":
+        if profile:
+            await start_next_session(message.author, profile)
+        else:
+            await message.author.send("You are not enrolled in any course. Please enroll in a course first.")
+    elif content == "d":
+        if profile:
+            session = get_current_session(profile)
+            task = session["tasks"][0]
+            await message.author.send(f"Task: {task}")
+            await message.author.send("Type 'e <your response>' to check your task.")
+        else:
+            await message.author.send("You are not enrolled in any course. Please enroll in a course first.")
+    elif content.startswith("e"):
+        if len(content.split()) < 3:
+            await message.author.send("Please provide a response to check. For example: 'e let x = 10;'")
+        else:
+            response_text = content.split(" ", 2)[2]
+            if profile:
+                session = get_current_session(profile)
+                expected_intent = session["tasks"][0]
+                if detect_intent(response_text, expected_intent):
+                    await message.author.send("Great job! You correctly completed the task.")
+                    await start_next_session(message.author, profile)
+                else:
+                    await message.author.send("It looks like there's an error. Remember to follow the task instructions. Try again!")
+            else:
+                await message.author.send("You are not enrolled in any course. Please enroll in a course first.")
+    elif content == "next":
+        if profile:
+            await start_next_session(message.author, profile)
+        else:
+            await message.author.send("You are not enrolled in any course. Please enroll in a course first.")
+    elif content == "end":
+        if profile:
+            await message.author.send("You have ended the current session. Type 'menu' to see available options.")
+        else:
+            await message.author.send("You are not enrolled in any course. Please enroll in a course first.")
+    else:
+        await message.author.send("I didn't understand that. Please use the 'menu' command to see available options.")
+
+async def start_next_session(user, profile):
     session = next_session(profile)
     content = session["content"]
     examples = "\n".join(session["examples"])
-    await ctx.send(f"{content}\n\nExamples:\n{examples}")
+    await user.send(f"Session Name: {session['name']}\nContent: {content}\nExamples:\n{examples}")
+    await user.send("Type 'next' to proceed to the next session or 'end' to end the current session.")
 
-@bot.command()
-async def assign_task(ctx):
-    discord_id = ctx.author.id
-    profile = get_profile(discord_id)
-    session = next_session(profile)
-    print(profile)
-    task = session["tasks"][0]
-    await ctx.send(f"Task: {task}")
-
-@bot.command()
-async def check_task(ctx, *, response_text):
-    discord_id = ctx.author.id
-    profile = get_profile(discord_id)
-    session = next_session(profile)
-    expected_intent = session["tasks"][0]
-    if detect_intent(response_text, expected_intent):
-        await ctx.send("Great job! You correctly completed the task. Let's move on to the next task.")
-    else:
-        await ctx.send("It looks like there's an error. Remember to follow the task instructions. Try again!")
+async def display_menu(user):
+    menu = (
+        "Please select an option by typing the corresponding letter:\n"
+        "a) List Courses\n"
+        "b) Enroll in a Course\n"
+        "c) Start Session\n"
+        "d) Assign Task\n"
+        "e) Check Task"
+    )
+    await user.send(menu)
 
 bot.run(os.getenv('DISCORD_BOT_TOKEN'))
