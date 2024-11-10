@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 import os
 from utils.course_manager import get_courses, create_profile, next_session, get_current_session
 from utils.profile_manager import get_profile, save_profile
-from utils.intent_detector import detect_intent
+from utils.intent_detector import generate_response
 
 load_dotenv()
 
@@ -68,9 +68,10 @@ async def handle_dm(message):
                 if profile:
                     session = get_current_session(profile)
                     expected_intent = session["tasks"][0]
-                    is_correct, feedback = detect_intent(response_text, expected_intent)
-                    await message.author.send(feedback)
-                    if is_correct:
+                    user_input = f"detect_intent response_text='{response_text}' expected_intent='{expected_intent}'"
+                    response = generate_response(user_input)
+                    await message.author.send(response)
+                    if "Great job!" in response:
                         await send_next_session(message.author, profile)
                 else:
                     await message.author.send("You are not enrolled in any course. Please enroll in a course first.")
@@ -109,6 +110,9 @@ async def display_menu(user):
         await user.send(menu)
 
 bot.run(os.getenv('DISCORD_BOT_TOKEN'))
+
+
+
 
 
 # import discord
@@ -157,11 +161,12 @@ bot.run(os.getenv('DISCORD_BOT_TOKEN'))
 #             else:
 #                 course = content.split(" ")[1]
 #                 profile = create_profile(discord_id, course)
+#                 save_profile(discord_id, profile)  # Save the profile after enrolling
 #                 await message.author.send(f"You're enrolled in the {course} course! Let's begin with your first session.")
-#                 await start_next_session(message.author, profile)
+#                 await send_next_session(message.author, profile)
 #         elif content == "c":
 #             if profile:
-#                 await start_next_session(message.author, profile)
+#                 await send_next_session(message.author, profile)
 #             else:
 #                 await message.author.send("You are not enrolled in any course. Please enroll in a course first.")
 #         elif content == "d":
@@ -183,12 +188,12 @@ bot.run(os.getenv('DISCORD_BOT_TOKEN'))
 #                     is_correct, feedback = detect_intent(response_text, expected_intent)
 #                     await message.author.send(feedback)
 #                     if is_correct:
-#                         await start_next_session(message.author, profile)
+#                         await send_next_session(message.author, profile)
 #                 else:
 #                     await message.author.send("You are not enrolled in any course. Please enroll in a course first.")
 #         elif content == "next":
 #             if profile:
-#                 await start_next_session(message.author, profile)
+#                 await send_next_session(message.author, profile)
 #             else:
 #                 await message.author.send("You are not enrolled in any course. Please enroll in a course first.")
 #         elif content == "end":
@@ -199,13 +204,14 @@ bot.run(os.getenv('DISCORD_BOT_TOKEN'))
 #         else:
 #             await message.author.send("I didn't understand that. Please use the 'menu' command to see available options.")
 
-# async def start_next_session(user, profile):
+# async def send_next_session(user, profile):
 #     async with user.typing():
 #         session = next_session(profile)
 #         content = session["content"]
 #         examples = "\n".join(session["examples"])
 #         await user.send(f"Session Name: {session['name']}\nContent: {content}\nExamples:\n{examples}")
 #         await user.send("Type 'next' to proceed to the next session or 'end' to end the current session.")
+#         save_profile(user.id, profile)  # Save the profile after starting a new session
 
 # async def display_menu(user):
 #     async with user.typing():
@@ -220,3 +226,4 @@ bot.run(os.getenv('DISCORD_BOT_TOKEN'))
 #         await user.send(menu)
 
 # bot.run(os.getenv('DISCORD_BOT_TOKEN'))
+
